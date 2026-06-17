@@ -112,7 +112,24 @@
   --tertiary-low: rgba(68, 169, 80, 0.1);
   --tertiary-medium: rgba(68, 169, 80, 0.4);
   --tertiary-high: #3a7046;
+
+  // Button icon colors — évite les icônes invisibles au hover
+  --d-button-default-icon-color: var(--fg-muted);
+  --d-button-default-icon-color--hover: var(--fg);
+  --d-button-primary-icon-color: var(--fg-inverse);
+  --d-button-primary-icon-color--hover: var(--fg-inverse);
 }
+
+// Scrollbar
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--surface); }
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary-300);
+  border-radius: 4px;
+
+  &:hover { background: var(--color-primary-500); }
+}
+* { scrollbar-color: var(--color-primary-300) var(--surface); scrollbar-width: thin; }
 
 // =============================================================================
 // BASE
@@ -204,8 +221,10 @@ hr {
   box-shadow: none;
   height: 80px;
 
-  .title a {
-    color: var(--fg-inverse);
+  .title a,
+  .title a:visited,
+  .title a span {
+    color: #ffffff;
     font-family: var(--font-display);
     font-weight: 800;
     font-size: 1.25rem;
@@ -213,6 +232,12 @@ hr {
 
     &:hover { color: var(--fg-inverse-muted); }
   }
+}
+
+// Icônes du header — restent blanches y compris au hover
+.d-header-icons .btn {
+  --d-button-default-icon-color: rgba(255, 255, 255, 0.7);
+  --d-button-default-icon-color--hover: #ffffff;
 }
 
 .d-header-icons .btn,
