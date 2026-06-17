@@ -475,14 +475,9 @@ label {
 
 .topic-list-body .topic-list-item {
   background: var(--surface-elevated);
-  border: 2px solid var(--border);
-  border-radius: var(--radius-2);
-  margin-bottom: var(--space-2);
-  transition: border-color var(--transition-normal) var(--ease-in-out);
+  transition: background var(--transition-normal) var(--ease-in-out);
 
-  &:hover { border-color: var(--border-strong); }
-
-  td { border: none; }
+  &:hover { background: var(--surface); }
 }
 
 .topic-list .topic-list-header th {
