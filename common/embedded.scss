@@ -1,0 +1,19 @@
+// Chargé exclusivement dans la vue /embed/comments (iframe)
+
+html,
+body {
+  background: #ffffff;
+}
+
+footer .button {
+  background-color: #174424;
+  color: #ffffff;
+
+  &:hover { background-color: #3a7046; }
+}
+
+a {
+  color: #3a7046;
+
+  &:hover { color: #44a950; }
+}

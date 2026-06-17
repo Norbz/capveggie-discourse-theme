@@ -2,10 +2,24 @@
   "name": "Mijote",
   "component": false,
   "authors": "Nicolas Chesné",
-  "about_url": "",
-  "license_url": "",
+  "about_url": null,
+  "license_url": null,
   "theme_version": "0.0.1",
   "minimum_discourse_version": null,
   "maximum_discourse_version": null,
-  "assets": {}
+  "assets": {},
+  "color_schemes": {
+    "Mijote": {
+      "primary": "174424",
+      "secondary": "FFFFFF",
+      "tertiary": "3A7046",
+      "quaternary": "44A950",
+      "header_background": "174424",
+      "header_primary": "FFFFFF",
+      "highlight": "FFB84C",
+      "danger": "FF866A",
+      "success": "44A950",
+      "love": "FF866A"
+    }
+  }
 }
