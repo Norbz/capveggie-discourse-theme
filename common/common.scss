@@ -5,7 +5,6 @@
 // =============================================================================
 // TOKENS
 // =============================================================================
-
 :root {
   // Primary palette
   --color-primary-900: #174424;
@@ -35,14 +34,14 @@
   // Surfaces
   --bg: #f5f3ed;
   --surface: #eeeae0;
-  --surface-elevated: #ffffff;
+  --surface-elevated: #fff;
   --surface-green: #174424;
 
   // Text
   --fg: #174424;
   --fg-secondary: #383838;
   --fg-muted: #627067;
-  --fg-inverse: #ffffff;
+  --fg-inverse: #fff;
   --fg-inverse-muted: #d4e8d5;
 
   // Borders
@@ -71,9 +70,9 @@
   --radius-5: 1rem; // 16px — max autorisé
 
   // Shadows
-  --shadow-1: 0 2px 4px rgba(0, 0, 0, 0.05);
-  --shadow-2: 0 4px 8px rgba(0, 0, 0, 0.08);
-  --shadow-3: 0 8px 16px rgba(0, 0, 0, 0.1);
+  --shadow-1: 0 2px 4px rgb(0, 0, 0, 0.05);
+  --shadow-2: 0 4px 8px rgb(0, 0, 0, 0.08);
+  --shadow-3: 0 8px 16px rgb(0, 0, 0, 0.1);
 
   // Transitions
   --transition-fast: 100ms;
@@ -82,18 +81,18 @@
   --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
 
   // Typography
-  --font-display: "Young Serif", Georgia, serif;
-  --font-heading: "Playfair Display", Georgia, serif;
-  --font-body: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: "Young Serif", georgia, serif;
+  --font-heading: "Playfair Display", georgia, serif;
+  --font-body: "DM Sans", -apple-system, blinkmacsystemfont, sans-serif;
   --font-mono: "DM Mono", ui-monospace, monospace;
 
   // Discourse color variable overrides (replaces the default blue scheme)
   --primary: #174424;
-  --secondary: #ffffff;
+  --secondary: #fff;
   --tertiary: #44a950;
   --quaternary: #3a7046;
   --header-background: #174424;
-  --header-primary: #ffffff;
+  --header-primary: #fff;
   --highlight: #ffb84c;
   --danger: #ff866a;
   --success: #44a950;
@@ -111,8 +110,8 @@
   --primary-very-high: #174424;
 
   // Tertiary tints
-  --tertiary-low: rgba(68, 169, 80, 0.1);
-  --tertiary-medium: rgba(68, 169, 80, 0.4);
+  --tertiary-low: rgb(68, 169, 80, 0.1);
+  --tertiary-medium: rgb(68, 169, 80, 0.4);
   --tertiary-high: #3a7046;
 
   // Button icon colors
@@ -127,20 +126,32 @@
 }
 
 // Scrollbar
-::-webkit-scrollbar { width: 8px; height: 8px; }
-::-webkit-scrollbar-track { background: var(--surface); }
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+
 ::-webkit-scrollbar-thumb {
   background: var(--color-primary-300);
   border-radius: 4px;
 
-  &:hover { background: var(--color-primary-500); }
+  &:hover {
+    background: var(--color-primary-500);
+  }
 }
-* { scrollbar-color: var(--color-primary-300) var(--surface); scrollbar-width: thin; }
+
+* {
+  scrollbar-color: var(--color-primary-300) var(--surface);
+  scrollbar-width: thin;
+}
 
 // =============================================================================
 // BASE
 // =============================================================================
-
 body {
   font-family: var(--font-body);
   color: var(--fg-secondary);
@@ -158,7 +169,8 @@ h1 {
   color: var(--fg);
 }
 
-h2, h3 {
+h2,
+h3 {
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 1.5rem;
@@ -167,7 +179,9 @@ h2, h3 {
   color: var(--fg);
 }
 
-h4, h5, h6 {
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 1rem;
@@ -180,7 +194,9 @@ a {
   text-decoration: none;
   transition: color var(--transition-normal) var(--ease-in-out);
 
-  &:hover { color: var(--color-primary-500); }
+  &:hover {
+    color: var(--color-primary-500);
+  }
 }
 
 code {
@@ -221,11 +237,13 @@ hr {
 :focus-visible {
   outline: 2px solid var(--color-primary-500);
   outline-offset: 2px;
-  box-shadow: 0 0 0 4px rgba(68, 169, 80, 0.3);
+  box-shadow: 0 0 0 4px rgb(68, 169, 80, 0.3);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
@@ -234,14 +252,13 @@ hr {
 // =============================================================================
 // LAYOUT — PADDING & SPACING
 // =============================================================================
-
 #main-outlet {
   padding: var(--space-6) var(--space-8);
 }
 
 .boxed.white {
-  background: #ffffff;
-  border: 1px solid rgba(42, 92, 36, 0.14);
+  background: #fff;
+  border: 1px solid rgb(42, 92, 36, 0.14);
   border-radius: 16px;
   padding: var(--space-6);
 }
@@ -249,7 +266,6 @@ hr {
 // =============================================================================
 // NAVIGATION — HEADER
 // =============================================================================
-
 .d-header {
   background: var(--color-primary-900);
   border-bottom: none;
@@ -259,20 +275,22 @@ hr {
   .title a,
   .title a:visited,
   .title a span {
-    color: #ffffff;
+    color: #fff;
     font-family: var(--font-display);
     font-weight: 800;
     font-size: 1.25rem;
     letter-spacing: -0.02em;
 
-    &:hover { color: var(--fg-inverse-muted); }
+    &:hover {
+      color: var(--fg-inverse-muted);
+    }
   }
 }
 
 // Icônes du header — restent blanches y compris au hover
 .d-header-icons .btn {
-  --d-button-default-icon-color: rgba(255, 255, 255, 0.7);
-  --d-button-default-icon-color--hover: #ffffff;
+  --d-button-default-icon-color: rgb(255, 255, 255, 0.7);
+  --d-button-default-icon-color--hover: #fff;
 }
 
 .d-header-icons .btn,
@@ -285,24 +303,28 @@ hr {
 
   &:hover {
     color: var(--fg-inverse);
-    background: rgba(255, 255, 255, 0.1);
+    background: rgb(255, 255, 255, 0.1);
   }
 
-  .d-icon { color: inherit; }
+  .d-icon {
+    color: inherit;
+  }
 }
 
 .header-search-input {
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgb(255, 255, 255, 0.25);
   border-radius: var(--radius-0);
-  background: rgba(255, 255, 255, 0.1);
+  background: rgb(255, 255, 255, 0.1);
   color: var(--fg-inverse);
   font-family: var(--font-body);
 
-  &::placeholder { color: var(--fg-inverse-muted); }
+  &::placeholder {
+    color: var(--fg-inverse-muted);
+  }
 
   &:focus {
     border-color: var(--color-primary-500);
-    background: rgba(255, 255, 255, 0.15);
+    background: rgb(255, 255, 255, 0.15);
     outline: none;
   }
 }
@@ -310,13 +332,14 @@ hr {
 // =============================================================================
 // NAVIGATION — SIDEBAR
 // =============================================================================
-
 .sidebar-wrapper {
   background: var(--surface);
   border-right: 1px solid var(--border);
 }
 
-.sidebar-container { width: 240px; }
+.sidebar-container {
+  width: 240px;
+}
 
 .sidebar-section-header-text {
   font-family: var(--font-display);
@@ -334,7 +357,8 @@ a.sidebar-section-link {
   font-size: 0.875rem;
   padding: var(--space-3) var(--space-4);
   border-radius: var(--radius-0);
-  transition: background var(--transition-normal) var(--ease-in-out),
+  transition:
+    background var(--transition-normal) var(--ease-in-out),
     color var(--transition-normal) var(--ease-in-out);
 
   &:hover {
@@ -360,7 +384,9 @@ a.sidebar-section-link {
     }
   }
 
-  .sidebar-section-link-prefix .d-icon { color: var(--fg-muted); }
+  .sidebar-section-link-prefix .d-icon {
+    color: var(--fg-muted);
+  }
 
   &.active .sidebar-section-link-prefix .d-icon,
   &--active .sidebar-section-link-prefix .d-icon {
@@ -415,16 +441,19 @@ a.sidebar-section-link {
   padding: 0.75rem 1.5rem;
   border-width: 1px;
   cursor: pointer;
-  transition: background var(--transition-normal) var(--ease-in-out),
+  transition:
+    background var(--transition-normal) var(--ease-in-out),
     color var(--transition-normal) var(--ease-in-out);
   line-height: 1;
 
-  &:hover { border-width: 1px; }
+  &:hover {
+    border-width: 1px;
+  }
 
   &:focus-visible {
     outline: 2px solid var(--color-primary-500);
     outline-offset: 2px;
-    box-shadow: 0 0 0 4px rgba(68, 169, 80, 0.3);
+    box-shadow: 0 0 0 4px rgb(68, 169, 80, 0.3);
   }
 }
 
@@ -437,7 +466,10 @@ a.sidebar-section-link {
     color: var(--fg-inverse);
   }
 
-  &:disabled { opacity: 0.5; cursor: not-allowed; }
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 }
 
 .btn-default {
@@ -474,7 +506,6 @@ a.sidebar-section-link {
 // =============================================================================
 // COMPONENTS — INPUTS
 // =============================================================================
-
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -492,7 +523,9 @@ select {
   padding: var(--space-3) var(--space-4);
   transition: border-color var(--transition-normal) var(--ease-in-out);
 
-  &::placeholder { color: var(--fg-muted); }
+  &::placeholder {
+    color: var(--fg-muted);
+  }
 
   &:focus {
     outline: none;
@@ -500,7 +533,9 @@ select {
   }
 
   &[aria-invalid="true"],
-  &.is-invalid { border: 2px solid var(--color-error); }
+  &.is-invalid {
+    border: 2px solid var(--color-error);
+  }
 }
 
 label {
@@ -515,7 +550,7 @@ label {
 // COMPONENTS — TOPIC LIST
 // =============================================================================
 
-$border-green: rgba(42, 92, 36, 0.14);
+$border-green: rgb(42, 92, 36, 0.14);
 
 // border-radius sur <tr> ne fonctionne pas — on passe par border-collapse: separate
 // et on applique le radius sur les td first/last-child
@@ -537,10 +572,12 @@ $border-green: rgba(42, 92, 36, 0.14);
 }
 
 .topic-list-body .topic-list-item {
-  background: #ffffff;
+  background: #fff;
   transition: box-shadow var(--transition-normal) var(--ease-in-out);
 
-  &:hover { box-shadow: var(--shadow-2); }
+  &:hover {
+    box-shadow: var(--shadow-2);
+  }
 
   td {
     border-top: 1px solid #{$border-green};
@@ -548,7 +585,7 @@ $border-green: rgba(42, 92, 36, 0.14);
     border-left: none;
     border-right: none;
     padding: 14px 16px;
-    background: #ffffff;
+    background: #fff;
 
     &:first-child {
       border-left: 1px solid #{$border-green};
@@ -569,8 +606,13 @@ $border-green: rgba(42, 92, 36, 0.14);
   color: #1a2b18;
   line-height: 1.4;
 
-  &:hover { color: var(--color-primary-700); }
-  &:visited { color: var(--fg-muted); }
+  &:hover {
+    color: var(--color-primary-700);
+  }
+
+  &:visited {
+    color: var(--fg-muted);
+  }
 }
 
 .topic-list .topic-excerpt {
@@ -601,14 +643,18 @@ $border-green: rgba(42, 92, 36, 0.14);
 // =============================================================================
 // COMPONENTS — POST CONTENT
 // =============================================================================
-
 .cooked {
   font-family: var(--font-body);
   font-size: 1rem;
   line-height: 1.6;
   color: var(--fg-secondary);
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-display);
     color: var(--fg);
     letter-spacing: -0.02em;
@@ -633,7 +679,11 @@ $border-green: rgba(42, 92, 36, 0.14);
     padding: var(--space-4);
     overflow-x: auto;
 
-    code { background: none; border: none; padding: 0; }
+    code {
+      background: none;
+      border: none;
+      padding: 0;
+    }
   }
 
   blockquote {
@@ -668,7 +718,6 @@ $border-green: rgba(42, 92, 36, 0.14);
 // =============================================================================
 // COMPONENTS — ALERTS
 // =============================================================================
-
 .alert {
   font-family: var(--font-body);
   font-size: 0.875rem;
@@ -684,14 +733,14 @@ $border-green: rgba(42, 92, 36, 0.14);
   }
 
   &.alert-warning {
-    background: rgba(255, 184, 76, 0.12);
+    background: rgb(255, 184, 76, 0.12);
     border-color: var(--color-accent-amber);
     color: var(--fg);
   }
 
   &.alert-error,
   &.alert-danger {
-    background: rgba(255, 134, 106, 0.12);
+    background: rgb(255, 134, 106, 0.12);
     border-color: var(--color-accent-coral);
     color: var(--fg);
   }
@@ -706,7 +755,6 @@ $border-green: rgba(42, 92, 36, 0.14);
 // =============================================================================
 // COMPONENTS — MODALS
 // =============================================================================
-
 .modal-inner-container {
   background: var(--surface-elevated);
   border-radius: var(--radius-4);
@@ -743,7 +791,6 @@ $border-green: rgba(42, 92, 36, 0.14);
 // =============================================================================
 // COMPONENTS — TAGS
 // =============================================================================
-
 .discourse-tag {
   font-family: var(--font-mono);
   font-size: 0.75rem;
@@ -765,7 +812,6 @@ $border-green: rgba(42, 92, 36, 0.14);
 // =============================================================================
 // COMPONENTS — COMPOSER
 // =============================================================================
-
 #reply-control {
   .d-editor-preview {
     font-family: var(--font-body);
@@ -776,8 +822,8 @@ $border-green: rgba(42, 92, 36, 0.14);
     border: 2px solid var(--border);
     border-radius: var(--radius-0);
 
-    &:focus-within { border-color: var(--color-primary-500); }
+    &:focus-within {
+      border-color: var(--color-primary-500);
+    }
   }
 }
-
-
