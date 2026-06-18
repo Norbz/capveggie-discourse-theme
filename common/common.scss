@@ -492,37 +492,77 @@ label {
 // COMPONENTS — TOPIC LIST
 // =============================================================================
 
-.topic-list-body .topic-list-item {
-  background: var(--surface-elevated);
-  transition: background var(--transition-normal) var(--ease-in-out);
+$border-green: rgba(42, 92, 36, 0.14);
 
-  &:hover { background: var(--surface); }
+.topic-list {
+  border: none;
+
+  .topic-list-header th {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--fg-muted);
+    border-bottom: 1px solid #{$border-green};
+    padding: 12px 16px;
+  }
 }
 
-.topic-list .topic-list-header th {
-  font-family: var(--font-display);
-  font-size: 0.625rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--fg-muted);
+.topic-list-body .topic-list-item {
+  background: #ffffff;
+  border: 1px solid #{$border-green};
+  border-radius: 16px;
+  margin-bottom: var(--space-3);
+  transition: box-shadow var(--transition-normal) var(--ease-in-out);
+  overflow: hidden;
+
+  &:hover {
+    box-shadow: var(--shadow-2);
+  }
+
+  td {
+    border-bottom: 1px solid #{$border-green};
+    padding: 12px 16px;
+
+    &:last-child { border-bottom: none; }
+  }
 }
 
 .topic-list .title a {
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 1rem;
-  font-weight: 600;
-  color: var(--fg);
+  font-weight: 700;
+  color: #1a2b18;
+  line-height: 1.4;
 
   &:hover { color: var(--color-primary-700); }
   &:visited { color: var(--fg-muted); }
 }
 
-.badge-category__wrapper .badge-category {
-  border-radius: var(--radius-0);
+.topic-list .topic-excerpt {
   font-family: var(--font-body);
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--fg-muted);
+  margin-top: var(--space-1);
+}
+
+.topic-list .num.posts-map a,
+.topic-list .num.age.activity a {
+  font-family: "Young Serif", Georgia, serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: #1a2b18;
+}
+
+.badge-category__wrapper .badge-category {
+  border-radius: 16px;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.625rem;
 }
 
 // =============================================================================
